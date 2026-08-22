@@ -1,2 +1,58 @@
 # git-demo
-test
+
+
+
+常见问题：
+
+1）Git 和 GitHub 有什么区别：
+
+Git 是安装在本地电脑上的分布式版本控制工具，负责记录改动、管理分支与提交历史；GitHub 则是基于 Git 的代码托管平台，用于在网络上存放远程仓库并支持多人协作。简单说，Git 是工具，GitHub 是托管服务，Gitee、GitLab 与它作用类似，你可以只用 Git 而不使用任何托管平台。
+
+2）如何克隆一个远程仓库
+
+在远程仓库页面复制它的地址（HTTPS 或 SSH），然后在命令行或 Git Bash 中执行 git clone 加上该地址，例如 git clone https://example.com/user/repo.git。Git 会把远程仓库完整下载到当前目录并自动建立关联，之后即可用 git pull 拉取更新、用 git push 推送提交。
+
+3）命令行和图形界面该如何选择
+
+两者可以并用。命令行与 Git Bash 功能完整、脚本化能力强，适合熟悉命令的用户；图形界面客户端把提交、分支与冲突以可视化方式呈现，上手门槛较低。建议新手先用图形界面理解流程，同时逐步熟悉常用命令，遇到复杂操作时命令行往往更为直接。
+
+4）如何用 .gitignore 忽略不需要提交的文件
+
+在仓库根目录创建名为 .gitignore 的文本文件，把不希望纳入版本管理的文件或目录规则逐行写入，例如 node\_modules/、\*.log、build/ 等。保存后 Git 会自动忽略这些内容，不再提示提交。需要注意，已被跟踪的文件需先用 git rm --cached 取消跟踪，.gitignore 规则才会对其生效。
+
+5）遇到合并冲突怎么办
+
+当两条分支改动了同一处内容时，合并会产生冲突。Git 会在相关文件中用标记标出双方的改动，你需要打开文件，手动保留或整合正确的内容并删除冲突标记，然后执行 git add 将文件标记为已解决，再提交完成合并。借助图形界面客户端的冲突对比视图，可以更直观地逐处处理。
+
+6）在 Windows 上如何安装并完成基本配置
+
+下载 Windows 安装包后按向导完成安装，过程中可保留默认选项，安装完成即附带命令行与 Git Bash。首次使用建议先设置身份信息，执行 git config --global user.name "你的名字" 与 git config --global user.email "你的邮箱"，用于标识提交作者。之后即可进入项目目录用 git init 或 git clone 开始使用。
+
+
+
+命令	作用
+
+git init	初始化仓库
+
+git clone 地址	克隆仓库
+
+git add .	全部加入暂存
+
+git commit -m "msg"	本地提交
+
+git log --oneline	简洁查看历史
+
+git branch	查看分支
+
+git switch -c xxx	创建切换分支
+
+git merge xxx	合并分支
+
+git push origin xxx	推送
+
+git pull origin xxx	拉取合并
+
+git reset --hard id	版本回退
+
+git status	查看状态
+
